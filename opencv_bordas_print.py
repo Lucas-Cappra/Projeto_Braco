@@ -23,7 +23,7 @@ while True:
 
     cv.imshow('Video', cascate)        
 
-    if cv.waitKey(1) & 0xFF==ord('p'):
+    if cv.waitKey(1) & 0xFF==ord('p'):  # pressing 'p', it prints the camera frame to a png image.
         img_counter = img_counter+1
         print('Saving Image')
         cv.imwrite('Imagem{}.png'.format(img_counter), cascate)
@@ -31,7 +31,7 @@ while True:
         continue
 
 
-    if cv.waitKey(1) & 0xFF==ord('d'): # Waits '20' seconds to shutdown screen or when 'd' key is pressed. 
+    if cv.waitKey(1) & 0xFF==ord('d'): # pressing 'd' screen or when 'd' key is pressed. 
         break
 
 capture.release()       #stop capturing
