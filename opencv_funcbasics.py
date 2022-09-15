@@ -2,7 +2,7 @@ import cv2 as cv
 
 # reading videos
 capture = cv.VideoCapture(0) # Load the video capture, '0' for webcam or 'root/path.mp4' to specify video.
-
+img_counter = 0
 # img = cv.imread('Projeto Braco\photo\caminhao.jpg')
 
 def changeRes(width, height): # live Video
@@ -23,8 +23,15 @@ while True:
 
     cv.imshow('Video', cascate)        
 
-    if cv.waitKey(0) & 0xFF==ord('d'): # Waits '20' seconds to shutdown screen or when 'd' key is pressed. 
+    if cv.waitKey(1) & 0xFF==ord('p'):
+        img_counter = img_counter+1
+        print('Saving Image')
+        cv.imwrite('Imagem{}.png'.format(img_counter), cascate)
+        print(img_counter)
+        continue
+
+
+    if cv.waitKey(1) & 0xFF==ord('d'): # Waits '20' seconds to shutdown screen or when 'd' key is pressed. 
         break
 
 capture.release()       #stop capturing
-cv.destoyAllWindows()   # break the screen capture
