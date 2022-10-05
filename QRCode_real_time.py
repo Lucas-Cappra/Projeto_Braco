@@ -1,3 +1,9 @@
+#====================#
+
+#Author: Lucas Cappra
+
+#====================#
+
 # import the necessary packages
 from imutils.video import VideoStream
 from pyzbar import pyzbar
